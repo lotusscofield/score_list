@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>{{title}}</title>
+		<link rel="stylesheet" href="index.css">
+		<script type="text/javascript" src="jquery/dist/jquery.js"></script>
+		<script type="text/javascript" src="main.js"></script>
+		<script type="text/javascript" src="../app.js"></script>
+	</head>
+	<body>
+	  <table class="table-score">
+			<thead class="table-score-thead">
+					<th>学号</th>
+					<th>姓名</th>
+					<th data-order="asc" data-tip="chinese">语文</th>
+					<th data-order="asc" data-tip="math">数学</th>
+					<th data-order="asc" data-tip="english">英语</th>
+					<th>删除</th>
+			</thead>
+			<tbody class="table-score-tbody">
+				{{#each integrated}}
+					<tr>
+						<td>{{id}}</td>
+						<td>{{name}}</td>
+						<td>{{chinese}}</td>
+						<td>{{math}}</td>
+						<td>{{english}}</td>
+						<td data-id={{id}}>删除</td>
+					</tr>
+				{{/each}}
+			</tbody>
+
+	  </table>
+
+	</body>
+
+</html>
