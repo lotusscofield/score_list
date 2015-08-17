@@ -5,31 +5,37 @@
 		<link rel="stylesheet" href="index.css">
 		<script type="text/javascript" src="jquery/dist/jquery.js"></script>
 		<script type="text/javascript" src="main.js"></script>
-		<script type="text/javascript" src="../app.js"></script>
+
 	</head>
 	<body>
 	  <table class="table-score">
 			<thead class="table-score-thead">
-					<th>学号</th>
 					<th>姓名</th>
 					<th data-order="asc" data-tip="chinese">语文</th>
 					<th data-order="asc" data-tip="math">数学</th>
 					<th data-order="asc" data-tip="english">英语</th>
-					<th>删除</th>
+					<th>操作</th>
 			</thead>
-			<tbody class="table-score-tbody">
+			<tbody>
 				{{#each integrated}}
-					<tr>
-						<td>{{id}}</td>
+					<tr id={{id}}>
 						<td>{{name}}</td>
 						<td>{{chinese}}</td>
 						<td>{{math}}</td>
 						<td>{{english}}</td>
-						<td data-id={{id}}>删除</td>
+						<td class="delete" data-id={{id}}>删除</td>
 					</tr>
 				{{/each}}
 			</tbody>
-
+			<tfoot>
+				<tr>
+					<td><input id='add_name'/></td>
+					<td><input  id='add_chinese'/></td>
+					<td><input id='add_math'/></td>
+					<td><input id='add_english'/></td>
+					<td class="add" data-id={{add_id}}>添加</td>
+				</tr>
+			</tfoot>
 	  </table>
 
 	</body>
